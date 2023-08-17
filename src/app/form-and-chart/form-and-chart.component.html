@@ -1,0 +1,27 @@
+
+<h2 class="bg-info text-white text-center p-2 text-capitalize">Pie chart with user input</h2> <hr/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <div class="my-3">
+                <form [formGroup]='pieChartForm' novalidate class="form" id="" (ngSubmit)='createChart()'>
+                    <div >
+                    <input formControlName='colValue' (focusout)="validVal1()" type="number" class="form-control" placeholder="Enter chart value" [value]="val1" /> 
+                        <span class="text-danger" *ngIf="val1 > 100">please enter the value below 100</span>
+                    <br/>
+                    <input formControlName='colValue2' (focusout)="validVal2()" type="number" class="form-control" placeholder="Enter chart value" [value]="val2"  /> 
+                    <span class="text-danger" *ngIf="val2 > 100">please enter the value below 100</span>
+                   <br/>
+                    <button class="btn btn-primary mr-4">Submit</button>
+                </div>
+                
+            </form>
+            </div>
+        </div>
+        <div class="col-md-8 col-12">
+            <div class="m-4" style="height: 50vh;">
+                <canvas id = "myChart"></canvas>
+            </div>
+        </div>
+    </div>
+ </div>
